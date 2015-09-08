@@ -1,6 +1,6 @@
 // Karma configuration
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -30,6 +30,8 @@ module.exports = function(config) {
     files: [],
 
     jspm: {
+      main: 'client/app/app',
+      baseURL: './',
       // Edit this to your needs
       config: 'jspm.config.js',
       loadFiles: ['client/app/**/*.spec.js'],
@@ -37,7 +39,12 @@ module.exports = function(config) {
         'client/app/**/*.js',
         'client/app/**/*.html',
         'client/app/**/*.css'
-      ]
+      ],
+      paths: {
+        'client/app/*' : 'base/client/app/*',
+        'github:*': 'base/jspm_packages/github/*',
+        'npm:*': 'base/jspm_packages/npm/*'
+      }
     },
 
     proxies: {
