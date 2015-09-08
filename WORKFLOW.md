@@ -69,7 +69,7 @@ This configuration should load all browser dependencies from the `./jspm_compone
     * transpile `./client/src/app/**/*.less`  and concatentate with `./jspm_compnents/**/*.css` sending output to `./.build/app.css`
     * transpile `./client/src/app/**/*.(js|ts)` to `./.build/js/app/**/*.js`
     
-    ** check if config.js can map static assets folder separately from compiled assets, and switch to local assets whn packaged for production.
+    ** check if config.js can map static assets folder separately from compiled assets, and switch to local assets when packaged for production.
     
     * copy all `./client/assets/*` to `./.build/*`
       * includes:
