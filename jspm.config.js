@@ -14,6 +14,7 @@ System.config({
 
   map: {
     "angular": "github:angular/bower-angular@1.4.5",
+    "angular-material": "github:angular/bower-material@0.11.0",
     "angular-mocks": "npm:angular-mocks@1.4.5",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.23",
@@ -21,11 +22,24 @@ System.config({
     "chai": "npm:chai@3.2.0",
     "core-js": "npm:core-js@1.1.4",
     "css": "github:systemjs/plugin-css@0.1.16",
+    "font-awesome": "npm:font-awesome@4.4.0",
     "mocha": "npm:mocha@2.3.2",
     "normalize.css": "github:necolas/normalize.css@3.0.3",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.5"
+    },
+    "github:angular/bower-angular-animate@1.4.5": {
+      "angular": "github:angular/bower-angular@1.4.5"
+    },
+    "github:angular/bower-angular-aria@1.4.5": {
+      "angular": "github:angular/bower-angular@1.4.5"
+    },
+    "github:angular/bower-material@0.11.0": {
+      "angular": "github:angular/bower-angular@1.4.5",
+      "angular-animate": "github:angular/bower-angular-animate@1.4.5",
+      "angular-aria": "github:angular/bower-angular-aria@1.4.5",
+      "css": "github:systemjs/plugin-css@0.1.16"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.4.3"
@@ -60,6 +74,9 @@ System.config({
     "npm:deep-eql@0.1.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "type-detect": "npm:type-detect@0.1.1"
+    },
+    "npm:font-awesome@4.4.0": {
+      "css": "github:systemjs/plugin-css@0.1.16"
     },
     "npm:mocha@2.3.2": {
       "css": "github:systemjs/plugin-css@0.1.16"

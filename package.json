@@ -19,35 +19,51 @@
     "configFile": "jspm.config.js",
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.5",
+      "angular-material": "github:angular/bower-material@^0.11.0",
       "angular-mocks": "npm:angular-mocks@^1.4.0",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
-      "normalize.css": "github:necolas/normalize.css@^3.0.3",
       "css": "github:systemjs/plugin-css@^0.1.16",
+      "font-awesome": "npm:font-awesome@^4.4.0",
+      "normalize.css": "github:necolas/normalize.css@^3.0.3",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {
-      "chai": "npm:chai@^3.2.0",
-      "mocha": "npm:mocha@^2.3.2",
       "babel": "npm:babel-core@^5.8.22",
       "babel-runtime": "npm:babel-runtime@^5.8.20",
-      "core-js": "npm:core-js@^1.1.0"
+      "chai": "npm:chai@^3.2.0",
+      "core-js": "npm:core-js@^1.1.0",
+      "mocha": "npm:mocha@^2.3.2"
     }
   },
   "devDependencies": {
     "browser-sync": "^2.7.6",
+    "del": "^2.0.1",
     "gulp": "^3.9.0",
+    "gulp-add-src": "^0.2.0",
+    "gulp-concat": "^2.6.0",
     "gulp-html-replace": "^1.5.0",
+    "gulp-inject": "^1.5.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.1",
     "gulp-ng-annotate": "^1.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-print": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-template": "^3.0.0",
     "gulp-uglify": "^1.2.0",
     "jspm": "^0.16.2",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.0",
     "karma-jspm": "^2.0.1",
     "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.0.2",
+    "less-plugin-autoprefix": "^1.4.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "less-plugin-flexboxgrid": "0.0.2",
+    "less-plugin-lists": "^0.1.2",
     "yargs": "^3.10.0"
   }
 }

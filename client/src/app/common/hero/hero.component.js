@@ -1,6 +1,6 @@
 import template from './hero.html!text';
 import controller from './hero.controller';
-import './hero.css!';
+//import './hero.css!';
 
 let heroComponent = function(){
 	return {

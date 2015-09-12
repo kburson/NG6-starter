@@ -30,18 +30,18 @@ module.exports = function (config) {
     files: [],
 
     jspm: {
-      main: 'client/app/app',
+      main: 'client/src/app/app',
       baseURL: './',
       // Edit this to your needs
       config: 'jspm.config.js',
-      loadFiles: ['client/app/**/*.spec.js'],
+      loadFiles: ['client/src/app/**/*.spec.js'],
       serveFiles: [
-        'client/app/**/*.js',
-        'client/app/**/*.html',
-        'client/app/**/*.css'
+        'client/src/app/**/*.js',
+        'client/src/app/**/*.html',
+        'client/src/app/**/*.css'
       ],
       paths: {
-        'client/app/*' : 'base/client/app/*',
+        'client/src/app/*' : 'base/client/src/app/*',
         'github:*': 'base/jspm_packages/github/*',
         'npm:*': 'base/jspm_packages/npm/*'
       }

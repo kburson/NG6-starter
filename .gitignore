@@ -6,3 +6,5 @@ jspm_packages
 .settings
 *.log
 dist/
+.build/
+reports/
