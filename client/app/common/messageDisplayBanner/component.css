@@ -14,11 +14,11 @@
   darkTextColor = #212121
 */
 
-.hero {
+.message-banner {
   background-color: #263238; /* darkBgColor */
   height: 500px;
   padding: 30px;
 }
-.hero * {
+.message-banner * {
   color: #F5F5F5; /* lightTextColor */
 }

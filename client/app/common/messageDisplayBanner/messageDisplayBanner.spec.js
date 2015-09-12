@@ -2,19 +2,20 @@
 // https://github.com/Workiva/karma-jspm/issues/23
 import angular from 'angular';
 import 'angular-mocks';
-import HeroModule from './hero';
-import HeroController from './hero.controller';
-import HeroComponent from './hero.component';
-import HeroTemplate from './hero.html!text';
 
-describe('Hero', ()=>{
+import MessageDisplayBannerModule from './messageDisplayBanner';
+import MessageDisplayBannerController from './messageDisplayBanner.controller';
+import MessageDisplayBannerComponent from './messageDisplayBanner.component';
+import MessageDisplayBannerTemplate from './messageDisplayBanner.html!text';
+
+describe('MessageDisplayBanner', ()=>{
 	let $rootScope,
 	makeController;
 	
-	beforeEach(angular.mock.module(HeroModule.name));
+	beforeEach(angular.mock.module(MessageDisplayBannerModule.name));
 	beforeEach(angular.mock.inject((_$rootScope_)=>{
 		$rootScope = _$rootScope_;
-		makeController = ()=> new HeroController();
+		makeController = ()=> new MessageDisplayBannerController();
 	}));
 	
 	describe('Module', ()=>{
@@ -39,17 +40,17 @@ describe('Hero', ()=>{
 		// use Regexes to test that you are using the right bindings {{  }}
 		
 		it('should have name in template [REMOVE]', ()=>{
-			expect(HeroTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+			expect(MessageDisplayBannerTemplate).to.match(/{{\s?vm\.name\s?}}/g);
 		});
 	});
 	
 	
 	describe('Component', ()=>{
 			// test the component/directive itself
-			let component = HeroComponent();
+			let component = MessageDisplayBannerComponent();
 			
 			it('should use the right template',()=>{
-				expect(component.template).to.equal(HeroTemplate);
+				expect(component.template).to.equal(MessageDisplayBannerTemplate);
 			});
 			
 			it('should use controllerAs', ()=>{
@@ -57,7 +58,7 @@ describe('Hero', ()=>{
 			});
 			
 			it('should use the right controller', ()=>{
-				expect(component.controller).to.equal(HeroController);
+				expect(component.controller).to.equal(MessageDisplayBannerController);
 			});
 	});
 });
