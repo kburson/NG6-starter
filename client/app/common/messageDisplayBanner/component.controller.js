@@ -1,5 +1,6 @@
 class ComponentController {
-	constructor(){
+	'ngInject';
+	constructor($log){
 		this.name = 'messageDisplayBanner';
 	}
 }
