@@ -19,35 +19,43 @@ var $ = {
   addSrc: require('gulp-add-src'),
   minifyCss: require('gulp-minify-css'),
   sourcemaps: require('gulp-sourcemaps')
-
 };
 
-var root = 'client';
+var client = 'client';
 
 // helper method to resolveToApp paths
 var resolveTo = function (resolvePath) {
   return function (glob) {
     glob = glob || '';
-    return path.join(root, resolvePath, glob);
+    var filePath =  path.join(client, resolvePath, glob);
+    console.log('resolved:' + filePath);
+    return filePath;
   }
 };
 
-var resolveToApp = resolveTo('app'); // app/{glob}
-var resolveToComponents = resolveTo('app/components'); // app/components/{glob}
+var resolveToBuild = resolveTo('/../.build');
+var resolveToApp = resolveTo('src/app'); // app/{glob}
+var resolveToComponents = resolveTo('src/app/components'); // app/components/{glob}
 
 // map of all our paths
 var paths = {
   js: resolveToApp('**/*.js'),
-  css: resolveToApp('**/*.css'),
+  css: resolveToBuild('**/*.css'),
   html: [
     resolveToApp('**/*.html'),
-    path.join(root, 'index.html')
+    path.join(client, 'index.html')
   ],
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
-  dist: path.join(__dirname, 'dist/')
+  dist: path.join(__dirname, 'dist/'),
+  build: path.join(__dirname, '.build/')
 };
 
 gulp.task('serve', function () {
+
+  console.log("paths.js", paths.js);
+  console.log("paths.css", paths.css);
+  console.log("paths.html", paths.html);
+
   serve({
     port: process.env.PORT || 3000,
     open: false,
@@ -57,7 +65,7 @@ gulp.task('serve', function () {
         paths.html
     ),
     server: {
-      baseDir: root,
+      baseDir: client,
       // serve our jspm dependencies with the client folder
       routes: {
         '/jspm.config.js': './jspm.config.js',
@@ -67,7 +75,7 @@ gulp.task('serve', function () {
   });
 });
 
-gulp.task('build', function () {
+gulp.task('build', ['less:build'], function () {
   var dist = path.join(paths.dist + 'app.js');
   // Use JSPM to bundle our app
   return jspm.bundleSFX(resolveToApp('app'), dist, {})
@@ -162,7 +170,7 @@ function processStylesheets(liveReload) {
       .pipe($.minifyCss({}))
       .pipe($.sourcemaps.write())
 
-      .pipe(gulp.dest('.build/'))
+      .pipe(gulp.dest(paths.build))
       //.pipe($.if(liveReload === true, reload({stream: true})))
       ;
 
@@ -188,9 +196,9 @@ gulp.task('sweep', function(done) {
 gulp.task('clean', ['clean:build', 'clean:dist']);
 
 gulp.task('clean:build', function(callback) {
-  del('.build', {force: true}, callback);
+  del(paths.build, {force: true}, callback);
 });
 
 gulp.task('clean:dist', function(callback) {
-  del(DIR.dist, {force: true}, callback);
+  del(paths.dist, {force: true}, callback);
 });

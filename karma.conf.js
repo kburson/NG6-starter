@@ -38,7 +38,7 @@ module.exports = function (config) {
       serveFiles: [
         'client/src/app/**/*.js',
         'client/src/app/**/*.html',
-        'client/src/app/**/*.css'
+        '.build/**/*.css'
       ],
       paths: {
         'client/src/app/*' : 'base/client/src/app/*',

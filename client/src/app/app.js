@@ -4,6 +4,9 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 
+import 'app.css!';
+
+let tmp = "chicken";
 
 let appModule = angular.module('app', [
 	'ui.router',
@@ -18,10 +21,10 @@ let appModule = angular.module('app', [
  * Instead, we need to bootstrap the application manually
  */
 
-angular.element(document).ready(()=> {
-  angular.bootstrap(document, [appModule.name]), {
-    strictDi: true
-  }
-});
+angular.element(document).ready(
+    () => {
+      angular.bootstrap(document, [appModule.name]), {strictDi: true}
+    }
+);
 
 export default appModule;
