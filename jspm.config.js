@@ -9,8 +9,6 @@ System.config({
   },
   paths: {
     "app.css": ".build/app.css",
-    "angular-material.css": "jspm_packages/github/angular/bower-material@0.11.1/angular-material.css",
-    "normalize.css": "jspm_packages/github/necolas/normalize.css@3.0.3/normalize.css",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
@@ -28,6 +26,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.18",
     "font-awesome": "npm:font-awesome@4.4.0",
     "mocha": "npm:mocha@2.3.3",
+    "normalize.css": "github:necolas/normalize.css@3.0.3",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.6"

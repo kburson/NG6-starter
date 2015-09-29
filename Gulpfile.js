@@ -50,7 +50,7 @@ var paths = {
   build: path.join(__dirname, '.build/')
 };
 
-gulp.task('serve', function () {
+gulp.task('serve', ['less:build'], function () {
 
   console.log("paths.js", paths.js);
   console.log("paths.css", paths.css);
@@ -61,7 +61,7 @@ gulp.task('serve', function () {
     open: false,
     files: [].concat(
         [paths.js],
-        [paths.css],
+        ['../.build/app.css'],
         paths.html
     ),
     server: {

@@ -19,7 +19,7 @@
     "configFile": "jspm.config.js",
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.5",
-      "angular-material": "github:angular/bower-material@^0.11.0",
+      "angular-material": "github:angular/bower-material@^0.11.1",
       "angular-mocks": "npm:angular-mocks@^1.4.0",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "clean-css": "npm:clean-css@^3.4.4",
